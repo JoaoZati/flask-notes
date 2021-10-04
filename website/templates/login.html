@@ -1,12 +1,19 @@
 {% extends 'base/base.html' %}
-{% block title %}Login Page{% endblock %}
+{% block title %}Sing Up Page{% endblock %}
 {% block content %}
-<center><h1>Login Page</h1></center>
-<center><h2>
-    {% if boolean == True %}
-    Yes its true
-    {% else %}
-    It isint
-    {% endif %}
-</h2>
+<form method="POST">
+    <h3 align="center">Login</h3>
+    <br />
+    <div class="form-group">
+        <label form="email">Email Address</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email"/>
+    </div>
+    <br />
+    <div class="form-group">
+        <label form="password1">Email Address</label>
+        <input type="password" class="form-control" id="password1" name="password1" placeholder="Enter Password"/>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 {% endblock %}
