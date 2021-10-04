@@ -19,7 +19,7 @@ def login():
         if user:
             if check_password_hash(user.password, password):
                 flash('Logged in successfully', category='success')
-                return render_template('login.html')
+                return redirect(url_for('views.home'))
 
         flash('Wrong email or password', category='error')
 
