@@ -27,7 +27,7 @@ def login():
 
         flash('Wrong email or password', category='error')
 
-    return render_template('login.html')
+    return render_template('login.html', user=current_user)
 
 
 @auth.route('/logout')
@@ -67,4 +67,4 @@ def sing_up():
             flash('Sing up successfully', category='success',)
             return redirect( url_for('views.home'))
 
-    return render_template('sing_up.html')
+    return render_template('sing_up.html', user=current_user)
