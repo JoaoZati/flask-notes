@@ -23,7 +23,7 @@ def login():
             if check_password_hash(user.password, password):
                 flash('Logged in successfully', category='success')
                 login_user(user, remember=True)
-                return redirect(url_for('views. home'))
+                return redirect(url_for('views.home'))
 
         flash('Wrong email or password', category='error')
 
@@ -34,6 +34,7 @@ def login():
 @login_required
 def logout():
     logout_user()
+    flash('You were successfully Logged out', 'success')
     return redirect(url_for('auth.login'))
 
 
