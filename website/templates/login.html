@@ -2,5 +2,11 @@
 {% block title %}Login Page{% endblock %}
 {% block content %}
 <center><h1>Login Page</h1></center>
-<center><h2>{{ text }}</h2>
+<center><h2>
+    {% if boolean == True %}
+    Yes its true
+    {% else %}
+    It isint
+    {% endif %}
+</h2>
 {% endblock %}
