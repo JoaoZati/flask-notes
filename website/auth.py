@@ -63,8 +63,9 @@ def sing_up():
                             password=generate_password_hash(password1, method='sha256'))
             db.session.add(new_user)
             db.session.commit()
+            user = User.query.filter_by(email=email).first()
             login_user(user, remember=True)
             flash('Sing up successfully', category='success',)
-            return redirect( url_for('views.home'))
+            return redirect(url_for('views.home'))
 
     return render_template('sing_up.html', user=current_user)
